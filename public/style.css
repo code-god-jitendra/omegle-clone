@@ -1,0 +1,228 @@
+/* General Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0 0 80px;
+  background: #f4f4f4;
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.online-count {
+  margin: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Button Styling */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn-find {
+  background: #007bff;
+}
+
+.btn-end {
+  background: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Video Chat Layout */
+.chat-video-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.video-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.video-container {
+  position: relative;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 80vh;
+}
+
+.local-video {
+  width: 150px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+
+#buffering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* Chat Section for Video Chat */
+.chat-section {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+}
+
+/* Controls for Video Chat */
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+/* Text Chat Container (Fixed at Bottom) */
+.text-chat-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  border-top: 1px solid #ccc;
+}
+
+/* Chat Messages Area for Text Chat */
+.text-chat-container .chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 4px;
+}
+
+/* Chat Input Area for Text Chat */
+.text-chat-container .chat-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.text-chat-container .chat-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.text-chat-container .chat-input button {
+  padding: 10px 20px;
+}
+
+/* Message Styling */
+.message-you {
+  background-color: #d0eaff;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.message-stranger {
+  background-color: #d4f1c5;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.message-system {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px;
+  font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .chat-video-container {
+    flex-direction: column;
+  }
+  .chat-section {
+    max-width: 100%;
+    border-left: none;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  .local-video {
+    width: 100px;
+    bottom: 5px;
+    right: 5px;
+  }
+}

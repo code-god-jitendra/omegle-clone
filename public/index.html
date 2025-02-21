@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Online Users Count -->
+  <div id="onlineCount" class="online-count">Online Users: 0</div>
+
+  <!-- Mode Selection Screen -->
+  <div id="chooseMode" class="container">
+    <h2>Select Chat Mode</h2>
+    <div class="mode-buttons">
+      <button id="videoModeBtn" class="btn">Video Chat</button>
+      <button id="textModeBtn" class="btn">Text Chat</button>
+    </div>
+  </div>
+
+  <!-- Video Chat Container -->
+  <div id="video-chat" class="container" style="display:none;">
+    <div class="chat-video-container">
+      <div class="video-section">
+        <div id="videos" class="video-container">
+          <video id="remoteVideo" autoplay playsinline></video>
+          <div id="buffering">Searching for a stranger...</div>
+          <video id="localVideo" autoplay muted playsinline class="local-video"></video>
+        </div>
+      </div>
+      <div class="chat-section">
+        <div id="videoChatMessages" class="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" id="videoChatInput" placeholder="Type a message..." />
+          <button id="videoChatSend" class="btn">Send</button>
+        </div>
+        <div class="controls">
+          <!-- Unique toggle button for video mode -->
+          <button id="videoConversationToggle" class="btn btn-find">Find Stranger</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text Chat Container -->
+  <div id="text-chat" class="text-chat-container" style="display:none;">
+    <div id="textChatMessages" class="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="textChatInput" placeholder="Type a message..." />
+      <button id="textChatSend" class="btn">Send</button>
+    </div>
+    <div class="controls">
+      <!-- Unique toggle button for text mode -->
+      <button id="textConversationToggle" class="btn btn-find">Find Stranger</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
