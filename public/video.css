@@ -1,13 +1,13 @@
-/* General Styling */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0 0 80px;
+  padding: 0;
   background: #f4f4f4;
   color: #333;
   text-align: center;
 }
 
+/* Container */
 .container {
   max-width: 1200px;
   margin: 20px auto;
@@ -16,22 +16,17 @@ body {
   border-radius: 8px;
 }
 
+/* Online Count */
 .online-count {
   margin: 10px;
   font-size: 18px;
-  text-align: center;
 }
 
-.mode-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-/* Button Styling */
+/* Buttons */
 .btn {
   padding: 10px 20px;
   border: none;
+  background: #007bff;
   color: #fff;
   font-size: 16px;
   border-radius: 4px;
@@ -51,25 +46,32 @@ body {
   opacity: 0.9;
 }
 
-/* Video Chat Layout */
+/* Chat & Video Container */
 .chat-video-container {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  max-width: 90vw;
+  height: 80vh;
+  margin: auto;
 }
 
+/* Video Section */
 .video-section {
   flex: 1;
-  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Video Container */
 .video-container {
   position: relative;
   background: #000;
   border-radius: 8px;
   overflow: hidden;
+  width: 100%;
+  height: 80vh;
   max-width: 800px;
-  margin: 0 auto;
 }
 
 video {
@@ -88,6 +90,7 @@ video {
   border-radius: 4px;
 }
 
+/* Buffering Message */
 #buffering {
   position: absolute;
   top: 50%;
@@ -99,14 +102,16 @@ video {
   font-size: 18px;
 }
 
-/* Chat Section for Video Chat */
+/* Chat Section */
 .chat-section {
-  flex: 1;
-  max-width: 300px;
+  flex: 0 0 300px;
+  width: 25vw;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
+/* Chat Messages */
 .chat-messages {
   flex: 1;
   overflow-y: auto;
@@ -115,8 +120,13 @@ video {
   margin-bottom: 10px;
   text-align: left;
   border-radius: 4px;
+  max-height: 70vh;
+  word-wrap: break-word; /* Ensures text wraps */
+  overflow-wrap: break-word; /* Ensures words break if too long */
+  white-space: normal; /* Prevents text from forcing a single line */
 }
 
+/* Chat Input */
 .chat-input {
   display: flex;
   gap: 10px;
@@ -130,99 +140,85 @@ video {
   border-radius: 4px;
 }
 
+/* Chat Input Button */
 .chat-input button {
   padding: 10px 20px;
 }
 
-/* Controls for Video Chat */
+/* Controls */
 .controls {
   display: flex;
   justify-content: center;
 }
 
-/* Text Chat Container (Fixed at Bottom) */
-.text-chat-container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 80vh;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  box-sizing: border-box;
-  border-top: 1px solid #ccc;
+/* Message Styles */
+.message-you,
+.message-stranger,
+.message-system {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2px;
+    max-width: 100%;
+    word-wrap: break-word; /* Ensures text wraps */
+    overflow-wrap: break-word; /* Allows breaking inside words */
+    white-space: normal; /* Ensures normal text wrapping */
 }
 
-/* Chat Messages Area for Text Chat */
-.text-chat-container .chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-align: left;
-  border-radius: 4px;
-}
-
-/* Chat Input Area for Text Chat */
-.text-chat-container .chat-input {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.text-chat-container .chat-input input[type="text"] {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.text-chat-container .chat-input button {
-  padding: 10px 20px;
-}
-
-/* Message Styling */
 .message-you {
   background-color: #d0eaff;
-  padding: 5px;
-  border-radius: 5px;
-  margin: 2px;
 }
 
 .message-stranger {
   background-color: #d4f1c5;
-  padding: 5px;
-  border-radius: 5px;
-  margin: 2px;
 }
 
 .message-system {
   background-color: #f8d7da;
   color: #721c24;
-  padding: 5px;
-  border-radius: 5px;
-  margin: 2px;
   font-style: italic;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .chat-video-container {
-    flex-direction: column;
+      flex-direction: column;
+      width: 100%;
+      padding: 5px;
   }
+  .video-container{
+    max-height: 40vh;
+  }
+
+  .video-section {
+      order: 1;
+      width: 100%;
+  }
+
+  .local-video{
+    max-height: 10vh;
+  }
+
   .chat-section {
-    max-width: 100%;
-    border-left: none;
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
+      order: 2;
+      width: 100%;
   }
-  .local-video {
-    width: 100px;
-    bottom: 5px;
-    right: 5px;
+
+  .chat-messages {
+      max-height: 35vh;
+  }
+
+  .chat-input {
+      flex-direction: row;
+      gap: 5px;
+  }
+
+  .chat-input input[type="text"] {
+      font-size: 14px;
+      padding: 6px;
+  }
+
+  .chat-input button {
+      font-size: 14px;
+      padding: 8px;
+      width: auto;
   }
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Clone - Text Chat</title>
+  <link rel="stylesheet" href="text.css" />
+</head>
+<body>
+  <div id="onlineCount" class="online-count">Online Users: 0</div>
+  <div id="text-chat" class="text-chat-container">
+    <div id="textChatMessages" class="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="textChatInput" placeholder="Type a message..." />
+      <button id="textChatSend" class="btn">Send</button>
+    </div>
+    <div class="controls">
+      <button id="textConversationToggle" class="btn btn-find">Find Stranger</button>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="text.js"></script>
+</body>
+</html>

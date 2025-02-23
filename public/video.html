@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Clone - Video Chat</title>
+  <link rel="stylesheet" href="video.css" />
+</head>
+<body>
+  <div id="onlineCount" class="online-count">Online Users: 0</div>
+  <div id="video-chat" class="container">
+    <div class="chat-video-container">
+      <div class="video-section">
+        <div id="videos" class="video-container">
+          <video id="remoteVideo" autoplay playsinline></video>
+          <div id="buffering">Searching for a stranger...</div>
+          <video id="localVideo" autoplay muted playsinline class="local-video"></video>
+        </div>
+      </div>
+      <div class="chat-section">
+        <div id="videoChatMessages" class="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" id="videoChatInput" placeholder="Type a message..." />
+          <button id="videoChatSend" class="btn">Send</button>
+        </div>
+        <div class="controls">
+          <button id="videoConversationToggle" class="btn btn-find">Find Stranger</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="video.js"></script>
+</body>
+</html>
