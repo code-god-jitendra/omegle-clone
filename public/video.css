@@ -178,7 +178,7 @@ video {
   font-style: italic;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 720px) {
   .chat-video-container {
     flex-direction: column;
     width: 100%;
