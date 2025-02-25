@@ -6,9 +6,21 @@ let remoteSocketId = null;
 let isMuted = false;
 let isVideoHidden = false;
 
+// const configuration = {
+//   iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+// };
+
 const configuration = {
-  iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+  iceServers: [
+    {
+      urls: "turn:my-turn-server.onrender.com:3478",
+      username: "testuser",       // same as in turnserver.conf
+      credential: "testpassword"  // same as in turnserver.conf
+    },
+    { urls: "stun:stun.l.google.com:19302" } // Optional STUN server
+  ]
 };
+
 
 // Utility functions
 function clearChatMessages(containerId) {
